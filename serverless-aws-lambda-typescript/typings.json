@@ -1,0 +1,8 @@
+{
+  "dependencies": {},
+  "ambientDependencies": {},
+  "globalDependencies": {
+    "aws-sdk": "registry:dt/aws-sdk#0.0.0+20160811005841",
+    "node-4": "registry:dt/node-4#4.0.0+20160830122837"
+  }
+}

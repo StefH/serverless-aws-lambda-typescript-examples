@@ -1,0 +1,12 @@
+{
+  "name": "my-example-service",
+  "version": "0.0.1",
+  "description": "my-example-service",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "codelyzer": "0.0.28",
+    "tslint": "^3.9.0",
+    "typescript": "2.0.0"
+  }
+}
