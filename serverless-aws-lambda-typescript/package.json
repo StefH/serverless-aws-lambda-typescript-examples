@@ -6,7 +6,7 @@
     "build": "rimraf ./lib && tsc",
     "deploy": "npm run build && serverless deploy",
     "typings": "typings install",
-    "lint": "npm run tslint \"src/**/*.ts\""
+    "lint": "tslint \"src/**/*.ts\" --force"
   },
   "dependencies": {
     "aws-sdk": "^2.5.4",
