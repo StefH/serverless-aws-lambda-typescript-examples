@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "description": "serverless-aws-lambda-typescript",
   "scripts": {
-    "build": "rimraf ./lib && tsc",
+    "build": "rimraf ./dist && tsc",
     "deploy": "npm run build && serverless deploy",
     "typings": "typings install",
-    "lint": "tslint \"src/**/*.ts\" --force"
+    "lint": "tslint \"src/**/*.ts\" --force",
+    "test:function": "serverless invoke --function serverlessAWSLambdaTS"
   },
   "dependencies": {
     "aws-sdk": "^2.5.4",

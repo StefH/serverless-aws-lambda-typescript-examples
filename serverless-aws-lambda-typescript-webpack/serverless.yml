@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: serverless-aws-lambda-ts-examples
+service: serverless-aws-lambda-ts-wp-examples
 
 provider:
   name: aws
@@ -22,18 +22,21 @@ defaults:
  stage: prod
  region: eu-west-1
 
+plugins:
+ - serverless-webpack
+
 # you can add packaging information here
-package:
- include:
-   - lib
-   - node_modules
- exclude:
-   - package.json
+# package:
+#  include:
+#    - lib
+#    - node_modules
+#  exclude:
+#    - package.json
 #  artifact: my-service-code.zip
 
 functions:
   serverlessAWSLambdaTS:
-    handler: dist/handler.handleIt
+    handler: handler.handleIt
     memory: 128
     timeout: 5
 
