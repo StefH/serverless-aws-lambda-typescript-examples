@@ -1,4 +1,4 @@
-import { SNS } from 'aws-sdk';
+import { SES } from 'aws-sdk';
 import { AxiosResponse } from 'axios';
 import { Context, Callback } from 'aws-lambda';
 import { HttpRestHelper } from './httpRestHelper';
@@ -6,6 +6,9 @@ import { IPost } from './post';
 
 exports.handleIt = function(event: any, context: Context, callback: Callback) {
     let helper: HttpRestHelper = new HttpRestHelper();
+
+    // load AWS SES (as demo)
+    let ses: SES = new SES({ apiVersion: '2010-12-01' });
 
     helper.getPosts()
         .then((response: AxiosResponse) => {

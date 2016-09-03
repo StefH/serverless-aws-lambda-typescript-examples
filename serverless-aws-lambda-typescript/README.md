@@ -1,4 +1,4 @@
-Install node.js packages and install typings :
+Install node.js packages and install Typings :
 ```bash
 npm i
 typings i
