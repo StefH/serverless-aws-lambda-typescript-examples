@@ -1,5 +1,7 @@
 var path = require('path');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 // Helper functions
 var ROOT = path.resolve(__dirname, '..');
 
@@ -11,6 +13,7 @@ function root(args) {
 module.exports = {
   entry: './src/handler.ts',
   target: 'node',
+  externals: [ "aws-sdk" ], // modules to be excluded from bundled file
   resolve: {
     extensions: ['', '.ts', '.js', '.json'],
 
@@ -51,5 +54,13 @@ module.exports = {
         loader: 'json-loader'
       },
     ]
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: 'src/config.json',
+        to: 'config.json'
+      }
+    ]),
+  ],
 };
