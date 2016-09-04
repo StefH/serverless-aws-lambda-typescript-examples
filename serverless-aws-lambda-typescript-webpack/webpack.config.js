@@ -58,8 +58,8 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: 'src/config.json',
-        to: 'config.json'
+        from: 'src/aws-config.json',
+        to: 'aws-config.json'
       }
     ]),
   ],

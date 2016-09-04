@@ -15,7 +15,7 @@ exports.handleIt = function(event: any, context: Context, callback: Callback) {
             let posts: IPost[] = response.data as IPost[];
             callback(null, {
                 message: 'Your get request executed successfully',
-                data: posts
+                data: posts[0]
             });
         })
         .catch((err: any) => {
