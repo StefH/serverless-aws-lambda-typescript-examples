@@ -3,21 +3,27 @@
   "version": "0.0.1",
   "description": "serverless-aws-lambda-typescript",
   "scripts": {
+    "install": "typings install",
     "build": "rimraf ./dist && tsc",
     "deploy": "npm run build && serverless deploy",
     "typings": "typings install",
     "lint": "tslint \"src/**/*.ts\" --force",
-    "test:function": "serverless invoke --function serverlessAWSLambdaTS"
+    "test:function": "serverless invoke --function serverlessAWSLambdaTS",
+    "test:runlocal": "npm run build && run-local-lambda --file dist/handler.js --handler handleIt --event eventExample.json --timeout 5000",
+    "test:local": "npm run build && lambda-local --function dist/handler.js --event eventExample.json --timeout 5"
   },
   "dependencies": {
-    "aws-sdk": "^2.5.4",
+    "aws-sdk": "^2.5.5",
     "axios": "^0.14.0"
   },
   "devDependencies": {
+    "aws-lambda-local": "^1.0.14",
     "aws-sdk-typescript": "0.0.3",
     "codelyzer": "0.0.28",
     "rimraf": "^2.5.4",
-    "tslint": "^3.9.0",
-    "typescript": "2.0.0"
+    "run-local-lambda": "^1.1.1",
+    "tslint": "^3.15.1",
+    "typescript": "2.0.0",
+    "typings": "^1.3.3"
   }
 }

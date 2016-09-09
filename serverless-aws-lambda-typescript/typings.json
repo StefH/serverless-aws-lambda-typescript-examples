@@ -1,12 +1,12 @@
 {
   "dependencies": {},
-  "ambientDependencies": {
-  },
+  "ambientDependencies": {},
   "globalDependencies": {
-    "node-4": "registry:dt/node-4#4.0.0+20160830122837"
+    "aws-lambda": "registry:dt/aws-lambda#0.0.0+20160906141158",
+    "node-4": "registry:dt/node-4#4.0.0+20160907114229"
   },
   "globalDevDependencies": {
-    "es6-promise": "registry:dt/es6-promise#0.0.0+20160614011821",
-    "aws-sdk-typings": "github:stefh/aws-sdk-typescript#HEAD"
+    "aws-sdk-typings": "github:stefh/aws-sdk-typescript#HEAD",
+    "es6-promise": "registry:dt/es6-promise#0.0.0+20160614011821"
   }
 }

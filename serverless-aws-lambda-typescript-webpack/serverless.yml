@@ -16,6 +16,8 @@ service: serverless-aws-lambda-ts-wp-examples
 provider:
   name: aws
   runtime: nodejs4.3
+  stage: prod
+  region: eu-west-1
 
 # you can overwrite defaults here
 defaults:

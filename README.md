@@ -4,5 +4,4 @@ Examples for AWS Lambda functions created with the Serverless framework in TypeS
 Install node.js packages and install typings :
 ```bash
 npm i
-typings i
 ```

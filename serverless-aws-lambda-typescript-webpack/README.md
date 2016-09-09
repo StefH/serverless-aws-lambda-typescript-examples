@@ -3,7 +3,6 @@
 Install node.js packages and install typings :
 ```bash
 npm i
-typings i
 ```
 
 ### Bundle with webpack

@@ -7,17 +7,32 @@
 # Just uncomment any of them to get that config option.
 #
 # For full config options, check the docs:
-#    v1.docs.serverless.com
+#    docs.serverless.com
 #
 # Happy Coding!
 
-service: serverless-aws-lambda-ts-examples
+service: aws-nodejs # NOTE: update this with your service name
 
 provider:
   name: aws
   runtime: nodejs4.3
   stage: prod
   region: eu-west-1
+  
+# you can add statements to the Lambda function's IAM Role here
+#  iamRoleStatements:
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:ListBucket"
+#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:PutObject"
+#      Resource:
+#        Fn::Join:
+#          - ""
+#          - - "arn:aws:s3:::"
+#            - "Ref" : "ServerlessDeploymentBucket"
 
 # you can overwrite defaults here
 defaults:
@@ -25,27 +40,25 @@ defaults:
  region: eu-west-1
 
 # you can add packaging information here
-# package:
+#package:
 #  include:
-#    - node_modules
+#    - include-me.js
 #  exclude:
-#    - package.json
+#    - exclude-me.js
 #  artifact: my-service-code.zip
 
 functions:
-  serverlessAWSLambdaTS:
-    handler: dist/handler.handleIt
-    memory: 128
-    timeout: 5
+  hello:
+    handler: handler.hello
 
-#   you can add any of the following events
-#   events:
-#     - http:
-#         path: users/create
-#         method: get
-#     - s3: ${bucket}
-#     - schedule: rate(10 minutes)
-#     - sns: greeter-topic
+#    you can add any of the following events
+#    events:
+#      - http:
+#          path: users/create
+#          method: get
+#      - s3: ${env.BUCKET}
+#      - schedule: rate(10 minutes)
+#      - sns: greeter-topic
 
 # you can add CloudFormation resource templates here
 #resources:

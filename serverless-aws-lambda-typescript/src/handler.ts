@@ -2,9 +2,11 @@ import { SES } from 'aws-sdk';
 import { AxiosResponse } from 'axios';
 import { Context, Callback } from 'aws-lambda';
 import { HttpRestHelper } from './httpRestHelper';
-import { IPost } from './post';
+import { Post } from './post';
 
 exports.handleIt = function(event: any, context: Context, callback: Callback) {
+    console.log('Context : ' + JSON.stringify(context));
+
     let helper: HttpRestHelper = new HttpRestHelper();
 
     // load AWS SES (as demo)
@@ -12,7 +14,7 @@ exports.handleIt = function(event: any, context: Context, callback: Callback) {
 
     helper.getPosts()
         .then((response: AxiosResponse) => {
-            let posts: IPost[] = response.data as IPost[];
+            let posts: Post[] = response.data as Post[];
             callback(null, {
                 message: 'Your get request executed successfully',
                 data: posts[0]
