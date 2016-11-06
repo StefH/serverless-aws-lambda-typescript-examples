@@ -13,6 +13,7 @@
     "test:local": "npm run build && lambda-local --function dist/handler.js --event eventExample.json --timeout 5"
   },
   "dependencies": {
+    "@types/aws-lambda": "0.0.5",
     "aws-sdk": "^2.5.5",
     "axios": "^0.14.0"
   },

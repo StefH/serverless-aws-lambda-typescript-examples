@@ -4,7 +4,7 @@
   "description": "serverless-aws-lambda-typescript-webpack",
   "scripts": {
     "install": "typings install",
-    "build:webpack": "rimraf ./dist && serverless webpack --out dist",
+    "build:webpack": "rimraf ./dist && serverless webpack --out dist -d",
     "build:tsc": "rimraf ./tsc && tsc",
     "deploy": "serverless deploy",
     "typings": "typings install",
@@ -14,6 +14,7 @@
     "test:local": "npm run build:webpack && lambda-local --function dist/handler.js --event eventExample.json --timeout 5"
   },
   "dependencies": {
+    "@types/aws-lambda": "0.0.5",
     "aws-sdk": "^2.5.5",
     "axios": "^0.14.0"
   },

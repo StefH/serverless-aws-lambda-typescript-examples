@@ -2,8 +2,7 @@
   "dependencies": {},
   "ambientDependencies": {},
   "globalDependencies": {
-    "aws-lambda": "registry:dt/aws-lambda#0.0.0+20160906141158",
-    "node-4": "registry:dt/node-4#4.0.0+20160907114229"
+    "node-4": "registry:dt/node-4#4.0.0+20161019125345"
   },
   "globalDevDependencies": {
     "aws-sdk-typings": "github:stefh/aws-sdk-typescript#HEAD",
