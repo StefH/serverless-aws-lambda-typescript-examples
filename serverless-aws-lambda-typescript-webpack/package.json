@@ -14,11 +14,14 @@
     "test:local": "npm run build:webpack && lambda-local --function dist/handler.js --event eventExample.json --timeout 5"
   },
   "dependencies": {
-    "@types/aws-lambda": "0.0.5",
     "aws-sdk": "^2.5.5",
     "axios": "^0.14.0"
   },
   "devDependencies": {
+    "@types/aws-lambda": "0.0.5",
+    "@types/aws-sdk": "0.0.40",
+    "@types/es6-promise": "0.0.32",
+    "@types/node": "^4.0.0",
     "aws-lambda-local": "^1.0.14",
     "aws-sdk-typescript": "0.0.3",
     "codelyzer": "0.0.28",
