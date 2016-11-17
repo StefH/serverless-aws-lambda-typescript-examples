@@ -19,9 +19,12 @@ exports.handleIt = function(event: any, context: Context, callback: Callback) {
     helper.getPosts()
         .then((response: AxiosResponse) => {
             let posts: Post[] = response.data as Post[];
+            let post: Post = posts[0];
+            post.time = new Date();
+
             callback(null, {
                 message: 'Your get request executed successfully',
-                data: posts[0]
+                data: post
                 // config: cfg
             });
         })
