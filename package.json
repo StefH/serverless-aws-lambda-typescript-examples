@@ -7,6 +7,6 @@
   "devDependencies": {
     "codelyzer": "0.0.28",
     "tslint": "^4.4.0",
-    "typescript": "2.1.5"
+    "typescript": "2.2.1"
   }
 }
